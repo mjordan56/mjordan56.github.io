@@ -23,6 +23,7 @@ jobs:
     - run: flutter pub get
     - run: flutter build web --release
     - run: |
+        cp CNAME build/web/CNAME
         cd build/web
         git init
         git config --global user.email mjordan@quiverware.com
