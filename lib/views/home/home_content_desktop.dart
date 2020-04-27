@@ -14,8 +14,8 @@ class HomeContentDesktop extends StatelessWidget {
 
   static const TextStyle _headerStyle1 = TextStyle(
     color: Colors.white,
-    fontFamily: 'Roboto',
-    fontSize: 46,
+    fontFamily: 'Playfair',
+    fontSize: 48,
     fontWeight: FontWeight.w500,
     // letterSpacing: 1,
     // height: 1
@@ -40,12 +40,12 @@ class HomeContentDesktop extends StatelessWidget {
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Expanded(
-              flex: 50,
+              flex: 20,
               child: Align(
                 alignment: Alignment.topCenter,
                 child: SizedBox(
-                  height: 216,
-                  width: 416,
+                  height: 200,
+                  width: 100,
                   child: Container(
                     // decoration: _imageDecoration,
                     child: Image.asset(_defaultEventImage),
@@ -54,7 +54,7 @@ class HomeContentDesktop extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 50,
+              flex: 80,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -63,7 +63,7 @@ class HomeContentDesktop extends StatelessWidget {
                     style: _headerStyle1,
                   ),
                   Text(
-                    'My investigations and musing on cool tech',
+                    'Musing on cool tech',
                     style: _headerStyle2,
                   ),
                 ],
