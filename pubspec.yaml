@@ -59,11 +59,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-    # - assets/images/logos/flutter_denver_logo_200x100.png
-    # - assets/images/logos/flutter_denver_logo_400x200.png
-    # - assets/images/logos/meetup_logo_script.png
+  # Include assets for the project
+  assets:
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -76,13 +74,17 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Lato
-  #     fonts:
-  #       - asset: assets/fonts/Lato-Regular.ttf
-  #         weight: 400
-  #       - asset: assets/fonts/Lato-Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato-Bold.ttf
+          weight: 700
+    - family: Playfair
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf
+          style: italic
   #       - asset: assets/fonts/Lato-Black.ttf
   #         weight: 900
   # For details regarding fonts from package dependencies,
