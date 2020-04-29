@@ -15,8 +15,10 @@ class HomeContentDesktop extends StatelessWidget {
   static const TextStyle _headerStyle1 = TextStyle(
     color: Colors.white,
     fontFamily: 'PlayfairDisplay',
+    // fontFamily: 'Barlow',
     fontSize: 48,
-    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.italic,
+    // fontWeight: FontWeight.w500,
     // letterSpacing: 1,
     // height: 1
   );

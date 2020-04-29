@@ -81,6 +81,9 @@ flutter:
           weight: 400
         - asset: assets/fonts/Lato-Bold.ttf
           weight: 700
+    - family: Barlow
+      fonts:
+        - asset: assets/fonts/Barlow-SemiBoldItalic.ttf
     - family: PlayfairDisplay
       fonts:
         - asset: assets/fonts/PlayfairDisplay-SemiBoldItalic.ttf
