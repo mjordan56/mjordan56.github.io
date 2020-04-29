@@ -83,7 +83,7 @@ flutter:
           weight: 700
     - family: PlayfairDisplay
       fonts:
-        - asset: assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/PlayfairDisplay-SemiBoldItalic.ttf
           style: italic
   #       - asset: assets/fonts/Lato-Black.ttf
   #         weight: 900
