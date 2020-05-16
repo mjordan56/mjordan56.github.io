@@ -6,6 +6,7 @@ import 'package:shiny_object/model/about_data.dart';
 import 'package:shiny_object/model/data_manager.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
+import 'package:shiny_object/widgets/triangle.dart';
 
 const String defaultEventDescription = '''# Welcome To My Blog
 
@@ -83,15 +84,12 @@ class EventDetails extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: LayoutBuilder(
                       builder: (context, contraints) {
-                        final length = min(contraints.maxHeight, contraints.maxWidth) * 0.65;
-                        return ClipPath(
-                          clipper: TriangleClipper(),
-                          child: Container(
-                            color: Theme.of(context).accentColor,
-                            width: length,
-                            height: length,
-                            // child: SizedBox(width: 100, height: 100,),
-                          ),
+                        final length =
+                            min(contraints.maxHeight, contraints.maxWidth) *
+                                0.65;
+                        return Triangle(
+                          height: length,
+                          width: length,
                         );
                       },
                     ),
@@ -109,23 +107,13 @@ class EventDetails extends StatelessWidget {
             ),
             Container(
               color: Colors.red,
-              child: Placeholder(fallbackHeight: 125,),
+              child: Placeholder(
+                fallbackHeight: 125,
+              ),
             ),
           ],
         ),
       ),
     );
   }
-}
-
-class TriangleClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) => Path()
-    // ..moveTo(0, 0)
-    ..lineTo(0, size.height)
-    ..lineTo(size.width, size.height)
-    ..lineTo(0, 0);
-
-  @override
-  bool shouldReclip(oldClipper) => false;
 }
