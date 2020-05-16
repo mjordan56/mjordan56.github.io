@@ -10,17 +10,27 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // final TextTheme textTheme = TextTheme(bodyText1: )
   @override
   Widget build(BuildContext context) {
+    final myThemeData = ThemeData(
+      brightness: Brightness.light,
+      backgroundColor: Color(0xff222222),
+      primaryColor: Color(0xff1e88e5),
+      scaffoldBackgroundColor: Colors.black54,
+      canvasColor: Colors.white,
+      accentColor: Color(0xff1e88e5),
+    );
     return Provider(
       create: (_) => DataManager(),
       child: MaterialApp(
         title: 'Shiny Object Affliction',
-        theme: ThemeData(
-            primarySwatch: Colors.grey,
-            textTheme: Theme.of(context).textTheme.apply(
-                  fontFamily: 'Roboto',
-                )),
+        theme: myThemeData,
+        // theme: ThemeData(
+        //     primarySwatch: Colors.grey,
+        //     textTheme: Theme.of(context).textTheme.apply(
+        //           fontFamily: 'Lato',
+        //         )),
         home: LayoutTemplate(),
       ),
     );

@@ -16,20 +16,19 @@ class LayoutTemplate extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
         drawer: sizingInformation.isMobile ? NavigationDrawer() : null,
-        backgroundColor: Colors.black87,
         body: CenteredView(
-                  child: Column(
+          child: Column(
             children: <Widget>[
               NavigationBar(),
               Expanded(
                 child: LayoutBuilder(
-                  builder: (context, constraints) => SingleChildScrollView(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                        child: HomeContentDesktop(),
-                      ),
-                    )
-                ),
+                    builder: (context, constraints) => SingleChildScrollView(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight),
+                            child: HomeContentDesktop(),
+                          ),
+                        )),
               ),
             ],
           ),

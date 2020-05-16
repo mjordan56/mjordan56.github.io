@@ -15,7 +15,6 @@ class HomeContentDesktop extends StatelessWidget {
   static const TextStyle _headerStyle1 = TextStyle(
     color: Colors.white,
     fontFamily: 'PlayfairDisplay',
-    // fontFamily: 'Barlow',
     fontSize: 48,
     fontStyle: FontStyle.italic,
     // fontWeight: FontWeight.w500,
@@ -34,45 +33,49 @@ class HomeContentDesktop extends StatelessWidget {
   Widget _header() {
     return IntrinsicHeight(
       child: Container(
-        padding: EdgeInsets.fromLTRB(0, 28, 0, 14),
+        padding: EdgeInsets.fromLTRB(92, 28, 92, 14),
         color: _headerColor,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Expanded(
-              flex: 20,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: SizedBox(
-                  height: 200,
-                  width: 100,
-                  child: Container(
-                    // decoration: _imageDecoration,
-                    child: Image.asset(_defaultEventImage),
-                  ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                height: 200,
+                width: 100,
+                child: Container(
+                  // decoration: _imageDecoration,
+                  child: Image.asset(_defaultEventImage),
                 ),
               ),
             ),
-            Expanded(
-              flex: 80,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Shiny Object Affliction',
-                    style: _headerStyle1,
-                  ),
-                  Text(
-                    'Musing on cool tech',
-                    style: _headerStyle2,
-                  ),
-                ],
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Text(
+                  'Shiny Object Affliction',
+                  style: _headerStyle1,
+                ),
+                Text(
+                  'Musing on cool tech',
+                  style: _headerStyle2,
+                ),
+              ],
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _footer() {
+    return Container(
+      color: Colors.blue,
+      constraints: BoxConstraints(minHeight: 60),
+      child: Placeholder(
       ),
     );
   }
@@ -85,10 +88,11 @@ class HomeContentDesktop extends StatelessWidget {
           _header(),
           Container(
             alignment: Alignment.bottomCenter,
-            // height: 400,
+            color: Theme.of(context)
+                .backgroundColor, // makes the content area scrollable
             child: EventDetails(),
           ),
-          // _header(),
+          _footer(),
         ],
       ),
     );

@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shiny_object/model/about_data.dart';
 import 'package:shiny_object/model/data_manager.dart';
@@ -12,9 +15,7 @@ The primary reason I started this blog was to be able to share information on th
 
 When appropriate, the blog entries posted here will cross-reference associated GitHub projects that I've created to investigate various technologies. I'm creating these projects to showcase my work. If anyone else can find value in these projects please feel free to fork the project. Enjoy.
 
-## Blog Posts
 ''';
-
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis vitae est at vestibulum. Aliquam at velit in tellus egestas egestas. Etiam vitae ipsum nec mauris facilisis sagittis ac ac magna. In rutrum iaculis purus, eget aliquet mi ullamcorper nec. Nullam dapibus dictum sollicitudin. Proin eu rhoncus dolor. Maecenas iaculis tempor convallis. Integer sed enim congue, porta massa in, lobortis felis. Nulla facilisi. Etiam non nunc iaculis, vehicula neque eget, accumsan magna. Vestibulum et dictum lorem. In vel metus eu tortor eleifend accumsan non eu augue. Sed nec leo eget nunc imperdiet pretium vel non mauris. Fusce suscipit congue tempor. Quisque at ex gravida, mollis dui in, luctus nunc. Integer tincidunt magna viverra lacus molestie, id molestie ipsum malesuada.
 
 // Morbi iaculis, massa eu viverra accumsan, risus risus porttitor sapien, vel sagittis ipsum leo sed felis. Maecenas molestie augue nec auctor posuere. Proin elit tortor, vulputate at bibendum vitae, egestas in ligula. Nullam tempor ex non lectus aliquam vehicula. Pellentesque elit nisi, bibendum at neque sit amet, ullamcorper interdum ante. Quisque id risus in dui imperdiet dapibus a vitae libero. Sed auctor sodales dignissim. In aliquet quis leo id dapibus. Mauris id sem vitae felis imperdiet tincidunt id ac felis. Aenean vel convallis sem. Sed risus enim, euismod ut libero nec, porta varius elit.
@@ -25,11 +26,10 @@ When appropriate, the blog entries posted here will cross-reference associated G
 
 // Nunc luctus sem vel velit iaculis, eget mattis turpis mollis. Quisque suscipit luctus lectus. Donec sed diam viverra, tristique magna et, ultrices risus. Sed malesuada metus ligula. Maecenas eget auctor massa, ut feugiat ipsum. Suspendisse potenti. Fusce laoreet leo sed faucibus aliquam.
 
-
 class EventDetails extends StatelessWidget {
   const EventDetails({Key key, this.height}) : super(key: key);
 
-final double height;
+  final double height;
 
   static const _defaultEventImage = 'assets/images/shinybender.png';
 
@@ -64,26 +64,68 @@ final double height;
 
   @override
   Widget build(BuildContext context) {
-    final AboutData value = Provider.of<DataManager>(context).aboutData;
-    print('Value: ${value.data}');
+    // final AboutData value = Provider.of<DataManager>(context).aboutData;
+    // print('Value: ${value.data}');
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 65),
-      decoration: _parentContainerDecoration,
+      // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      // decoration: _parentContainerDecoration,
       child: Container(
-        color: Colors.white,
-        margin: EdgeInsets.all(20),
-        padding: EdgeInsets.all(20),
+        // color: Colors.white,
+        margin: EdgeInsets.fromLTRB(92, 30, 92, 30),
+        // padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            Align(
-              alignment: Alignment.topLeft,
-              child: MarkdownBody(
-                data: defaultEventDescription,
-              ),
+            Stack(
+              alignment: AlignmentDirectional.bottomStart,
+              children: <Widget>[
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: LayoutBuilder(
+                      builder: (context, contraints) {
+                        final length = min(contraints.maxHeight, contraints.maxWidth) * 0.65;
+                        return ClipPath(
+                          clipper: TriangleClipper(),
+                          child: Container(
+                            color: Theme.of(context).accentColor,
+                            width: length,
+                            height: length,
+                            // child: SizedBox(width: 100, height: 100,),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Theme.of(context).canvasColor,
+                  margin: EdgeInsets.all(12),
+                  padding: EdgeInsets.all(20),
+                  child: MarkdownBody(
+                    data: defaultEventDescription,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              color: Colors.red,
+              child: Placeholder(fallbackHeight: 125,),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) => Path()
+    // ..moveTo(0, 0)
+    ..lineTo(0, size.height)
+    ..lineTo(size.width, size.height)
+    ..lineTo(0, 0);
+
+  @override
+  bool shouldReclip(oldClipper) => false;
 }

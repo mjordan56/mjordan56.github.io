@@ -9,16 +9,16 @@ class NavigationBarTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff393c40),
-      padding: const EdgeInsets.only(top: 0, bottom: 12),
+      color: Color(0xff0a0909),
+      padding: const EdgeInsets.only(left: 92, top: 0, right: 92, bottom: 12),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.baseline,
         textBaseline: TextBaseline.ideographic,
         children: <Widget>[
           // NavBarLogo(),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               NavBarItem('Home', Routes.home),
               NavBarItem('About', Routes.about),
