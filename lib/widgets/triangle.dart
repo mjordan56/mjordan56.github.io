@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 
 class Triangle extends StatelessWidget {
-  Triangle({@required this.height, @required this.width, this.color})
-      : assert(height > 0.0 && width > 0.0);
+  Triangle({
+    @required this.height,
+    @required this.width,
+    this.color,
+    this.rotation = 0.0,
+  }) : assert(height > 0.0 && width > 0.0);
+
+  final Color color;
 
   final double height;
 
   final double width;
 
-  final Color color;
+  final double rotation;
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: TriangleClipper(),
-      child: Container(
-        color: color ?? Theme.of(context).accentColor,
-        height: height,
-        width: width,
+    return Transform.rotate(
+      angle: this.rotation,
+      child: ClipPath(
+        clipper: TriangleClipper(),
+        child: Container(
+          color: color ?? Theme.of(context).accentColor,
+          height: height,
+          width: width,
+        ),
       ),
     );
   }

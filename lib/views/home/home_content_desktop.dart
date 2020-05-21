@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shiny_object/widgets/event_details/event_details.dart';
+import 'package:shiny_object/widgets/footer.dart';
 
 class HomeContentDesktop extends StatelessWidget {
   const HomeContentDesktop({Key key}) : super(key: key);
@@ -40,14 +41,17 @@ class HomeContentDesktop extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Align(
-              alignment: Alignment.topCenter,
-              child: SizedBox(
-                height: 200,
-                width: 100,
-                child: Container(
-                  // decoration: _imageDecoration,
-                  child: Image.asset(_defaultEventImage),
+            Container(
+              margin: EdgeInsets.only(right: 30),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  height: 130,
+                  width: 65,
+                  child: Container(
+                    // decoration: _imageDecoration,
+                    child: Image.asset(_defaultEventImage),
+                  ),
                 ),
               ),
             ),
@@ -71,14 +75,6 @@ class HomeContentDesktop extends StatelessWidget {
     );
   }
 
-  Widget _footer() {
-    return Container(
-      color: Colors.blue,
-      constraints: BoxConstraints(minHeight: 60),
-      child: Placeholder(
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +88,7 @@ class HomeContentDesktop extends StatelessWidget {
                 .backgroundColor, // makes the content area scrollable
             child: EventDetails(),
           ),
-          _footer(),
+          Footer(),
         ],
       ),
     );

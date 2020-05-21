@@ -2,16 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:shiny_object/routing/router.dart';
 
 class NavigationService {
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  // final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> navigatorKey;
+
+  NavigationService() {
+    print('construct NavigationService');
+    navigatorKey = GlobalKey<NavigatorState>();
+    print('Navigator key: $navigatorKey');
+    print('current state: ${navigatorKey.currentState}');
+  }
 
   Future<dynamic> navigateTo(String routeName) {
-    if (!isCurrentRoute(routeName)) {
-      return navigatorKey.currentState.popAndPushNamed(routeName);
-      // return routeName == Routes.home
-      //     ? Future<bool>.value(navigatorKey.currentState.pop())
-      //     : navigatorKey.currentState.popAndPushNamed(routeName);
-    }
-    return Future<void>.value();
+    print('Navigator key: $navigatorKey');
+    print('current state: ${navigatorKey.currentState}');
+
+    return navigatorKey.currentState.pushNamed(routeName);
+    // if (!isCurrentRoute(routeName)) {
+    //   return navigatorKey.currentState.popAndPushNamed(routeName);
+    //   // return routeName == Routes.home
+    //   //     ? Future<bool>.value(navigatorKey.currentState.pop())
+    //   //     : navigatorKey.currentState.popAndPushNamed(routeName);
+    // }
+    // return Future<void>.value();
   }
 
   void goBack() {
@@ -43,6 +55,6 @@ class NavigationService {
   }
 
   bool isCurrentRoute(String route) {
-    return route == currentRoute.settings.name;
+    return false; //route == currentRoute.settings.name;
   }
 }

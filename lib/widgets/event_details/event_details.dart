@@ -6,6 +6,7 @@ import 'package:shiny_object/model/about_data.dart';
 import 'package:shiny_object/model/data_manager.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
+import 'package:shiny_object/widgets/blog_card_corral.dart';
 import 'package:shiny_object/widgets/triangle.dart';
 
 const String defaultEventDescription = '''# Welcome To My Blog
@@ -96,21 +97,19 @@ class EventDetails extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: Theme.of(context).canvasColor,
-                  margin: EdgeInsets.all(12),
-                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).canvasColor,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  margin: EdgeInsets.only(left: 12, bottom: 12),
+                  padding: EdgeInsets.all(28),
                   child: MarkdownBody(
                     data: defaultEventDescription,
                   ),
                 ),
               ],
             ),
-            Container(
-              color: Colors.red,
-              child: Placeholder(
-                fallbackHeight: 125,
-              ),
-            ),
+            BlogCardCorral(),
           ],
         ),
       ),
