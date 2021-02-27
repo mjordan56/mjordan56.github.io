@@ -1,11 +1,7 @@
-import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:shiny_object/model/about_data.dart';
-import 'package:shiny_object/model/data_manager.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:provider/provider.dart';
 import 'package:shiny_object/widgets/blog_card_corral.dart';
 import 'package:shiny_object/widgets/triangle.dart';
 
@@ -18,15 +14,6 @@ The primary reason I started this blog was to be able to share information on th
 When appropriate, the blog entries posted here will cross-reference associated GitHub projects that I've created to investigate various technologies. I'm creating these projects to showcase my work. If anyone else can find value in these projects please feel free to fork the project. Enjoy.
 
 ''';
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis vitae est at vestibulum. Aliquam at velit in tellus egestas egestas. Etiam vitae ipsum nec mauris facilisis sagittis ac ac magna. In rutrum iaculis purus, eget aliquet mi ullamcorper nec. Nullam dapibus dictum sollicitudin. Proin eu rhoncus dolor. Maecenas iaculis tempor convallis. Integer sed enim congue, porta massa in, lobortis felis. Nulla facilisi. Etiam non nunc iaculis, vehicula neque eget, accumsan magna. Vestibulum et dictum lorem. In vel metus eu tortor eleifend accumsan non eu augue. Sed nec leo eget nunc imperdiet pretium vel non mauris. Fusce suscipit congue tempor. Quisque at ex gravida, mollis dui in, luctus nunc. Integer tincidunt magna viverra lacus molestie, id molestie ipsum malesuada.
-
-// Morbi iaculis, massa eu viverra accumsan, risus risus porttitor sapien, vel sagittis ipsum leo sed felis. Maecenas molestie augue nec auctor posuere. Proin elit tortor, vulputate at bibendum vitae, egestas in ligula. Nullam tempor ex non lectus aliquam vehicula. Pellentesque elit nisi, bibendum at neque sit amet, ullamcorper interdum ante. Quisque id risus in dui imperdiet dapibus a vitae libero. Sed auctor sodales dignissim. In aliquet quis leo id dapibus. Mauris id sem vitae felis imperdiet tincidunt id ac felis. Aenean vel convallis sem. Sed risus enim, euismod ut libero nec, porta varius elit.
-
-// Praesent ornare rutrum risus, dictum elementum nulla efficitur eget. Duis elementum, tellus vitae commodo faucibus, diam leo fermentum mi, quis pellentesque urna nulla vel diam. Mauris auctor augue nec libero molestie, in tincidunt leo gravida. Nullam egestas quam vel ornare maximus. Integer eu iaculis tortor. Proin cursus at felis eu pulvinar. Quisque vel nibh a elit tempor consectetur. Sed blandit metus vel imperdiet placerat. Donec ut sem non urna egestas auctor. Pellentesque pharetra sapien ac massa sagittis vehicula. Maecenas eget ipsum urna.
-
-// Pellentesque venenatis velit ipsum, eu semper nisi fermentum molestie. Phasellus arcu elit, luctus eu tortor vitae, elementum varius libero. Etiam consectetur ullamcorper metus et gravida. Morbi id nunc volutpat, ultrices tellus sit amet, convallis justo. Nullam mollis arcu in ipsum tincidunt ultricies. Curabitur id nunc molestie, fermentum metus id, volutpat nunc. Donec maximus augue magna, eget rhoncus orci pretium in. Vestibulum ac risus nibh. Praesent in metus posuere, euismod enim nec, maximus ante. Maecenas sit amet urna a est ultrices viverra. Sed malesuada nulla quis enim facilisis, vitae tempus lorem lacinia. Duis ac dapibus magna.
-
-// Nunc luctus sem vel velit iaculis, eget mattis turpis mollis. Quisque suscipit luctus lectus. Donec sed diam viverra, tristique magna et, ultrices risus. Sed malesuada metus ligula. Maecenas eget auctor massa, ut feugiat ipsum. Suspendisse potenti. Fusce laoreet leo sed faucibus aliquam.
 
 class EventDetails extends StatelessWidget {
   const EventDetails({Key key, this.height}) : super(key: key);

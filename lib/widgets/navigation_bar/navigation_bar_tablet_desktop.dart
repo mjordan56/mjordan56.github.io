@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/routing/router.dart';
-import 'package:shiny_object/widgets/navigation_bar/navbar_item.dart';
-import 'package:shiny_object/widgets/navigation_bar/navbar_logo.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
-  const NavigationBarTabletDesktop({Key key, this.tabController}) : super(key: key);
+  const NavigationBarTabletDesktop({Key key, this.tabController})
+      : super(key: key);
 
   final TabController tabController;
 
@@ -42,37 +40,29 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
         textBaseline: TextBaseline.ideographic,
         children: <Widget>[
           // NavBarLogo(),
-          Flexible(
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: TabBar(
-                controller: _tabController,
-                indicatorColor: Colors.white,
-                indicatorWeight: 4,
-                indicatorSize: TabBarIndicatorSize.label,
-                indicatorPadding: EdgeInsets.only(bottom: 8),
-                isScrollable: true,
-                // labelPadding: EdgeInsets.only(left: 0, right: 0),
-                labelStyle: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.bold),
-                tabs: <Widget>[
-                  Tab(text: 'Home'),
-                  Tab(text: 'Posts'),
-                  Tab(text: 'About'),
-                ],
-              ),
+          // Flexible(child:
+          Align(
+            alignment: Alignment.bottomRight,
+            child: TabBar(
+              controller: _tabController,
+              indicatorColor: Colors.white,
+              indicatorWeight: 4,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorPadding: EdgeInsets.only(bottom: 8),
+              isScrollable: true,
+              // labelPadding: EdgeInsets.only(left: 0, right: 0),
+              labelStyle: TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Lato',
+                  fontWeight: FontWeight.bold),
+              tabs: <Widget>[
+                Tab(text: 'Home'),
+                Tab(text: 'Posts'),
+                Tab(text: 'About'),
+              ],
             ),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.end,
-          //   children: <Widget>[
-          //     NavBarItem('Home', Routes.home),
-          //     NavBarItem('Posts', Routes.posts),
-          //     NavBarItem('About', Routes.about),
-          //   ],
-          // )
+          // ),
         ],
       ),
     );

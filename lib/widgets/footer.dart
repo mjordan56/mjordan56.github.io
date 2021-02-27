@@ -15,7 +15,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: _color,
-      constraints: BoxConstraints(minHeight: 25),
+      constraints: BoxConstraints(minHeight: 25, maxWidth: 1250),
       padding: EdgeInsets.symmetric(horizontal: 92, vertical: 24),
       child: Row(
         children: [

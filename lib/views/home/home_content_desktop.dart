@@ -9,8 +9,6 @@ class HomeContentDesktop extends StatelessWidget {
 
   static const _headerColor = Color(0xff0a0a0a);
 
-  static const _meetupLogo = 'assets/images/logos/meetup_logo_script.png';
-
   static const _defaultEventImage = 'assets/images/shinybender.png';
 
   static const TextStyle _headerStyle1 = TextStyle(
@@ -75,18 +73,20 @@ class HomeContentDesktop extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: <Widget>[
           _header(),
-          Container(
-            alignment: Alignment.bottomCenter,
-            color: Theme.of(context)
-                .backgroundColor, // makes the content area scrollable
-            child: EventDetails(),
+          ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 1250),
+            child: Container(
+              alignment: Alignment.bottomCenter,
+              color: Theme.of(context)
+                  .backgroundColor, // makes the content area scrollable
+              child: EventDetails(),
+            ),
           ),
           Footer(),
         ],

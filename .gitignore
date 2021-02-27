@@ -41,6 +41,7 @@ lib/generated_plugin_registrant.dart
 .buildlog/
 .history
 .svn/
+.last_build_id
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
