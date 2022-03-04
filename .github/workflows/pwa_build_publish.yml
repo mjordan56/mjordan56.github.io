@@ -10,7 +10,7 @@ jobs:
     name: Build Web
     
     env:
-      my_secret: ${{secrets.commit_secret}}
+      my_secret: ${{secrets.COMMIT_SECRET}}
 
     runs-on: ubuntu-latest
 
@@ -28,7 +28,7 @@ jobs:
         git config --global user.email mjordan@quiverware.com
         git config --global user.name mjordan56
         git status
-        git remote add origin https://${{secrets.commit_secret}}@github.com/mjordan56/mjordan56.github.io.git
+        git remote add origin https://${{secrets.COMMIT_SECRET}}@github.com/mjordan56/mjordan56.github.io.git
         git checkout -b master
         git add --all
         git commit -m "update website"
