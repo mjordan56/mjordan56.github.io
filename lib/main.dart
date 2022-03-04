@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/locator.dart';
-import 'package:shiny_object/model/data_manager.dart';
-import 'package:shiny_object/views/layout_template/layout_template.dart';
+import 'package:shiny_object_affliction/locator.dart';
+import 'package:shiny_object_affliction/model/data_manager.dart';
+import 'package:shiny_object_affliction/views/layout_template/layout_template.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   setupLocator();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   // final TextTheme textTheme = TextTheme(bodyText1: )
   @override
   Widget build(BuildContext context) {

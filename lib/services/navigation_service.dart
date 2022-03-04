@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class NavigationService {
   // final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-  GlobalKey<NavigatorState> navigatorKey;
+  final navigatorKey = GlobalKey<NavigatorState>();
 
   NavigationService() {
     print('construct NavigationService');
-    navigatorKey = GlobalKey<NavigatorState>();
+    // navigatorKey = GlobalKey<NavigatorState>();
     print('Navigator key: $navigatorKey');
     print('current state: ${navigatorKey.currentState}');
   }
@@ -15,7 +15,7 @@ class NavigationService {
     print('Navigator key: $navigatorKey');
     print('current state: ${navigatorKey.currentState}');
 
-    return navigatorKey.currentState.pushNamed(routeName);
+    return navigatorKey.currentState!.pushNamed(routeName);
     // if (!isCurrentRoute(routeName)) {
     //   return navigatorKey.currentState.popAndPushNamed(routeName);
     //   // return routeName == Routes.home
@@ -26,7 +26,7 @@ class NavigationService {
   }
 
   void goBack() {
-    return navigatorKey.currentState.pop();
+    return navigatorKey.currentState!.pop();
   }
 
   /// Get the current navigator route.
@@ -42,16 +42,16 @@ class NavigationService {
   ///
   /// This method calls popUntil getting the current route and ALWAYS returning
   /// true so the route remains on the navigator stack as the current route.
-  Route<dynamic> get currentRoute {
-    Route<dynamic> currentRoute;
-    navigatorKey.currentState.popUntil((Route<dynamic> route) {
-      currentRoute = route;
-      return true;
-    });
-    assert(currentRoute != null, 'Current route is null');
-    assert(currentRoute.isCurrent, 'Route is not the current route');
-    return currentRoute;
-  }
+  // Route<dynamic> get currentRoute {
+  //   Route<dynamic> currentRoute = ModalRoute.of(context).settings.name;
+  //   navigatorKey.currentState!.popUntil((Route<dynamic> route) {
+  //     currentRoute = route;
+  //     return true;
+  //   });
+  //   // assert(currentRoute != null, 'Current route is null');
+  //   // assert(currentRoute.isCurrent, 'Route is not the current route');
+  //   return currentRoute;
+  // }
 
   bool isCurrentRoute(String route) {
     return false; //route == currentRoute.settings.name;

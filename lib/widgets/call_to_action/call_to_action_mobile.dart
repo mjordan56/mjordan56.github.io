@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/constants/app_colors.dart';
+import 'package:shiny_object_affliction/constants/app_colors.dart';
 
 class CallToActionMobile extends StatelessWidget {
   final String title;
-  const CallToActionMobile(this.title, {Key key}) : super(key: key);
+  const CallToActionMobile(this.title, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,7 @@ class CallToActionMobile extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.circular(5)
-      ),
+          color: primaryColor, borderRadius: BorderRadius.circular(5)),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/views/about/about_view.dart';
-import 'package:shiny_object/views/home/home_view.dart';
-import 'package:shiny_object/views/posts/posts_view.dart';
+import 'package:shiny_object_affliction/views/about/about_view.dart';
+import 'package:shiny_object_affliction/views/home/home_view.dart';
+import 'package:shiny_object_affliction/views/posts/posts_view.dart';
 
 // Route names
 class Routes {
@@ -36,7 +36,7 @@ class _FadeRoute extends PageRouteBuilder {
   final Widget child;
   final RouteSettings settings;
 
-  _FadeRoute({this.child, this.settings})
+  _FadeRoute({required this.child, required this.settings})
       : super(
           pageBuilder: (
             BuildContext context,

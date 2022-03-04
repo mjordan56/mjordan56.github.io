@@ -34,7 +34,9 @@ class BlogCardCorral extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               children: [
                 for (var i in List.generate(16, (index) => index))
-                  BlogPostCard(index: i+1,),
+                  BlogPostCard(
+                    index: i + 1,
+                  ),
               ],
             ),
           ),
@@ -45,8 +47,7 @@ class BlogCardCorral extends StatelessWidget {
 }
 
 class BlogPostCard extends StatelessWidget {
-
-  BlogPostCard({@required this.index});
+  BlogPostCard({required this.index});
 
   final int index;
 
@@ -63,11 +64,20 @@ class BlogPostCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Android Things First Kotlin Device $index', style: TextStyle(fontFamily: 'Lato', fontSize: 22, fontWeight: FontWeight.bold),),
+          Text(
+            'Android Things First Kotlin Device $index',
+            style: TextStyle(
+                fontFamily: 'Lato', fontSize: 22, fontWeight: FontWeight.bold),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
             child: Text(
-                'Now is the time for all good men and women to come to the aid of their party.', style: TextStyle(fontFamily: 'Lato', fontSize: 17, fontWeight: FontWeight.normal),),
+              'Now is the time for all good men and women to come to the aid of their party.',
+              style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 17,
+                  fontWeight: FontWeight.normal),
+            ),
           ),
         ],
       ),

@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:shiny_object/widgets/blog_card_corral.dart';
-import 'package:shiny_object/widgets/triangle.dart';
+import 'package:shiny_object_affliction/widgets/blog_card_corral.dart';
+import 'package:shiny_object_affliction/widgets/triangle.dart';
 
 const String defaultEventDescription = '''# Welcome To My Blog
 
@@ -16,9 +16,9 @@ When appropriate, the blog entries posted here will cross-reference associated G
 ''';
 
 class EventDetails extends StatelessWidget {
-  const EventDetails({Key key, this.height}) : super(key: key);
+  const EventDetails({Key? key, this.height = 20.0}) : super(key: key);
 
-  final double height;
+  final double? height;
 
   static const _defaultEventImage = 'assets/images/shinybender.png';
 

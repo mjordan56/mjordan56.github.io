@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/constants/app_colors.dart';
+import 'package:shiny_object_affliction/constants/app_colors.dart';
 
 class CallToActionTabletDesktop extends StatelessWidget {
   final String title;
-  const CallToActionTabletDesktop(this.title, {Key key}) : super(key: key);
+  const CallToActionTabletDesktop(this.title, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

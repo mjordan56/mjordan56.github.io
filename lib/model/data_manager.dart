@@ -1,4 +1,4 @@
-import 'package:shiny_object/model/about_data.dart';
+import 'package:shiny_object_affliction/model/about_data.dart';
 
 class DataManager {
   DataManager() {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NavigationBarTabletDesktop extends StatefulWidget {
-  const NavigationBarTabletDesktop({Key key, this.tabController})
+  const NavigationBarTabletDesktop({Key? key, this.tabController})
       : super(key: key);
 
-  final TabController tabController;
+  final TabController? tabController;
 
   @override
   _NavigationBarTabletDesktopState createState() =>
@@ -13,7 +13,7 @@ class NavigationBarTabletDesktop extends StatefulWidget {
 
 class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late final TabController? _tabController;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
   @override
   void dispose() {
     // TODO: implement dispose
-    _tabController.dispose();
+    _tabController?.dispose();
     super.dispose();
   }
 

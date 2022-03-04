@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:markdown/markdown.dart' as md;
-import 'package:shiny_object/widgets/footer.dart';
+import 'package:shiny_object_affliction/widgets/footer.dart';
 
 class AboutContentDesktop extends StatelessWidget {
   AboutContentDesktop({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   static const _headerColor = Color(0xff0a0a0a);
@@ -136,6 +136,7 @@ class AboutContentDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const noMarkdownData = ':wink: markdown data not loaded';
     return Container(
       // constraints: BoxConstraints(minHeight: 900),
       // height: 900,
@@ -146,14 +147,16 @@ class AboutContentDesktop extends StatelessWidget {
             future: _loadAboutText(),
             builder: (context, snapshot) {
               String aboutData = snapshot.hasData
-                  ? snapshot.data
-                  : ':wink: markdown data not loaded';
+                  ? snapshot.data ?? noMarkdownData
+                  : noMarkdownData;
               return ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: 1250),
                 child: Container(
                   color: Colors.white,
-                  padding: EdgeInsets.symmetric(horizontal: 92, vertical: 46),
-                  margin: EdgeInsets.symmetric(horizontal: 92, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 92, vertical: 46),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 92, vertical: 8),
                   child: MarkdownBody(
                     extensionSet: md.ExtensionSet.gitHubWeb,
                     styleSheet: _markdownStyleSheet,

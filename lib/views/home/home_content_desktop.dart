@@ -1,11 +1,11 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:shiny_object/widgets/event_details/event_details.dart';
-import 'package:shiny_object/widgets/footer.dart';
+import 'package:shiny_object_affliction/widgets/event_details/event_details.dart';
+import 'package:shiny_object_affliction/widgets/footer.dart';
 
 class HomeContentDesktop extends StatelessWidget {
-  const HomeContentDesktop({Key key}) : super(key: key);
+  const HomeContentDesktop({Key? key}) : super(key: key);
 
   static const _headerColor = Color(0xff0a0a0a);
 

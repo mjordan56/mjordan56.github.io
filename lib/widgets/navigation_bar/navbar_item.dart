@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/locator.dart';
-import 'package:shiny_object/services/navigation_service.dart';
+import 'package:shiny_object_affliction/locator.dart';
+import 'package:shiny_object_affliction/services/navigation_service.dart';
 
 class NavBarItem extends StatelessWidget {
   final String title;
@@ -17,7 +17,7 @@ class NavBarItem extends StatelessWidget {
         padding: const EdgeInsets.only(left: 44.0),
         child: Text(
           title,
-          style: TextStyle(color: Colors.white , fontSize: 18),
+          style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
     );

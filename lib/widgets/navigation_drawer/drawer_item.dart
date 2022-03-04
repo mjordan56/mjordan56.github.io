@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/widgets/navigation_bar/navbar_item.dart';
+import 'package:shiny_object_affliction/widgets/navigation_bar/navbar_item.dart';
 
 class DrawerItem extends StatelessWidget {
   final String title;
   final IconData icon;
   final String navigationPath;
-  const DrawerItem(this.title, this.icon, this.navigationPath, {Key key}) : super(key: key);
+  const DrawerItem(this.title, this.icon, this.navigationPath, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

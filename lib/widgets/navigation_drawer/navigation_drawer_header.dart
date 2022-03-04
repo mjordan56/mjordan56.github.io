@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shiny_object/constants/app_colors.dart';
+import 'package:shiny_object_affliction/constants/app_colors.dart';
 
 class NavigationDrawerHeader extends StatelessWidget {
-  const NavigationDrawerHeader({Key key}) : super(key: key);
+  const NavigationDrawerHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

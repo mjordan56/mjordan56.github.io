@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:shiny_object/views/about/about_content_desktop.dart';
+import 'package:shiny_object_affliction/views/about/about_content_desktop.dart';
 
 class AboutView extends StatelessWidget {
-  const AboutView({Key key}) : super(key: key);
+  const AboutView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,16 @@ class AboutView extends StatelessWidget {
     );
   }
 }
+
 class AboutContentMobile extends StatelessWidget {
   const AboutContentMobile({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-          child: Container(
+      child: Container(
         color: Colors.lime[400],
         child: Center(
           child: Text('About View Mobile'),
@@ -40,7 +41,7 @@ class AboutContentMobile extends StatelessWidget {
 
 class AboutContentTablet extends StatelessWidget {
   const AboutContentTablet({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

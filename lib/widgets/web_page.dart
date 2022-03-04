@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class WebPage extends StatelessWidget {
-  const WebPage({Key key, this.child}) : super(key: key);
+  const WebPage({Key? key, required this.child}) : super(key: key);
   final Widget child;
 
   @override

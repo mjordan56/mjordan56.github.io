@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class Triangle extends StatelessWidget {
   Triangle({
-    @required this.height,
-    @required this.width,
+    required this.height,
+    required this.width,
     this.color,
     this.rotation = 0.0,
   }) : assert(height > 0.0 && width > 0.0);
 
-  final Color color;
+  final Color? color;
 
   final double height;
 
@@ -23,7 +23,7 @@ class Triangle extends StatelessWidget {
       child: ClipPath(
         clipper: TriangleClipper(),
         child: Container(
-          color: color ?? Theme.of(context).accentColor,
+          color: color ?? Theme.of(context).colorScheme.secondary,
           height: height,
           width: width,
         ),

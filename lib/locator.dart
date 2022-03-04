@@ -1,5 +1,5 @@
-import 'package:shiny_object/services/navigation_service.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shiny_object_affliction/services/navigation_service.dart';
 
 GetIt locator = GetIt.instance;
 

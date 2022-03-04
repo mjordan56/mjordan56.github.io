@@ -5,7 +5,7 @@ class CenteredView extends StatelessWidget {
 
   final double maxWidth;
 
-  const CenteredView({Key key, this.child, double width})
+  const CenteredView({Key? key, required this.child, double? width})
       : maxWidth = width ?? 1200,
         super(key: key);
 
