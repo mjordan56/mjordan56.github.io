@@ -12,7 +12,7 @@ class NavigationDrawerHeader extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
+        children: const <Widget>[
           Text(
             'Flutter Denver',
             style: TextStyle(

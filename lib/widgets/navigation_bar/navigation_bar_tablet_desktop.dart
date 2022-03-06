@@ -32,7 +32,7 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff0a0909),
+      color: const Color(0xff0a0909),
       padding: const EdgeInsets.only(left: 92, top: 0, right: 92, bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -48,14 +48,14 @@ class _NavigationBarTabletDesktopState extends State<NavigationBarTabletDesktop>
               indicatorColor: Colors.white,
               indicatorWeight: 4,
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorPadding: EdgeInsets.only(bottom: 8),
+              indicatorPadding: const EdgeInsets.only(bottom: 8),
               isScrollable: true,
               // labelPadding: EdgeInsets.only(left: 0, right: 0),
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Lato',
                   fontWeight: FontWeight.bold),
-              tabs: <Widget>[
+              tabs: const <Widget>[
                 Tab(text: 'Home'),
                 Tab(text: 'Posts'),
                 Tab(text: 'About'),

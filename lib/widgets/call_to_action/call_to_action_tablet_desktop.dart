@@ -11,7 +11,7 @@ class CallToActionTabletDesktop extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: Colors.white,

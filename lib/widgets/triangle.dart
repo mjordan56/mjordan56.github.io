@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Triangle extends StatelessWidget {
-  Triangle({
+  const Triangle({
+    Key? key,
     required this.height,
     required this.width,
     this.color,
     this.rotation = 0.0,
-  }) : assert(height > 0.0 && width > 0.0);
+  })  : assert(height > 0.0 && width > 0.0),
+        super(key: key);
 
   final Color? color;
 
@@ -19,7 +21,7 @@ class Triangle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(
-      angle: this.rotation,
+      angle: rotation,
       child: ClipPath(
         clipper: TriangleClipper(),
         child: Container(

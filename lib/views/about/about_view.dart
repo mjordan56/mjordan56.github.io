@@ -15,8 +15,8 @@ class AboutView extends StatelessWidget {
     // );
     return ScreenTypeLayout(
       desktop: AboutContentDesktop(),
-      mobile: AboutContentMobile(),
-      tablet: AboutContentTablet(),
+      mobile: const AboutContentMobile(),
+      tablet: const AboutContentTablet(),
     );
   }
 }
@@ -31,7 +31,7 @@ class AboutContentMobile extends StatelessWidget {
     return Expanded(
       child: Container(
         color: Colors.lime[400],
-        child: Center(
+        child: const Center(
           child: Text('About View Mobile'),
         ),
       ),
@@ -48,7 +48,7 @@ class AboutContentTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.lime[400],
-      child: Center(
+      child: const Center(
         child: Text('About View Tablet'),
       ),
     );

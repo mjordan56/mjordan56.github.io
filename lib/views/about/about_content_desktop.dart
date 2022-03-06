@@ -52,9 +52,9 @@ class AboutContentDesktop extends StatelessWidget {
   Widget _header() {
     return IntrinsicHeight(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 1250),
+        constraints: const BoxConstraints(maxWidth: 1250),
         child: Container(
-          padding: EdgeInsets.fromLTRB(92, 28, 92, 14),
+          padding: const EdgeInsets.fromLTRB(92, 28, 92, 14),
           color: _headerColor,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ class AboutContentDesktop extends StatelessWidget {
             // mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(right: 30),
+                margin: const EdgeInsets.only(right: 30),
                 child: Align(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
@@ -80,7 +80,7 @@ class AboutContentDesktop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Michael Jordan',
                     style: _headerStyle1,
                   ),
@@ -96,18 +96,18 @@ class AboutContentDesktop extends StatelessWidget {
                     child: TextButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xff1e88e5)),
+                              const Color(0xff1e88e5)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           padding: MaterialStateProperty.all<EdgeInsets>(
-                              EdgeInsets.symmetric(
+                              const EdgeInsets.symmetric(
                                   horizontal: 24, vertical: 16)),
                         ),
                         onPressed: () => {},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           mainAxisSize: MainAxisSize.min,
-                          children: [
+                          children: const [
                             Text(
                               'Download Resume',
                               style:
@@ -150,7 +150,7 @@ class AboutContentDesktop extends StatelessWidget {
                   ? snapshot.data ?? noMarkdownData
                   : noMarkdownData;
               return ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 1250),
+                constraints: const BoxConstraints(maxWidth: 1250),
                 child: Container(
                   color: Colors.white,
                   padding:
@@ -168,7 +168,7 @@ class AboutContentDesktop extends StatelessWidget {
             },
           ),
           // Placeholder(fallbackHeight: 2000,),
-          Footer(),
+          const Footer(),
         ],
       ),
     );

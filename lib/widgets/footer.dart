@@ -11,17 +11,19 @@ class Footer extends StatelessWidget {
 
   static const _color = Color(0xff0a0a0a);
 
+  const Footer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: _color,
-      constraints: BoxConstraints(minHeight: 25, maxWidth: 1250),
-      padding: EdgeInsets.symmetric(horizontal: 92, vertical: 24),
+      constraints: const BoxConstraints(minHeight: 25, maxWidth: 1250),
+      padding: const EdgeInsets.symmetric(horizontal: 92, vertical: 24),
       child: Row(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const <Widget>[
               Text(
                 'Shiny',
                 style: _style,

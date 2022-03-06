@@ -5,7 +5,7 @@ class NavBarLogo extends StatelessWidget {
 
   Widget _textLogo() {
     return RichText(
-      text: TextSpan(
+      text: const TextSpan(
           text: 'Shiny',
           style: TextStyle(
             color: Color.fromARGB(255, 70, 184, 246),

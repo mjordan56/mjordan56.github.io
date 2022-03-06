@@ -25,12 +25,11 @@ class EventDetails extends StatelessWidget {
   // Define the decoration used for the parent event container.
   static const _parentContainerDecoration = BoxDecoration(
     gradient: LinearGradient(
-        begin: const Alignment(-1.0, -1.0),
-        end: const Alignment(
-            1.0, 1.0), // 10% of the width, so there are ten blinds.
+        begin: Alignment(-1.0, -1.0),
+        end: Alignment(1.0, 1.0), // 10% of the width, so there are ten blinds.
         colors: [
-          const Color(0x6fB5BFBD),
-          const Color(0x6f08A07D),
+          Color(0x6fB5BFBD),
+          Color(0x6f08A07D),
         ], // whitish to gray
         stops: [
           0.0,
@@ -60,7 +59,7 @@ class EventDetails extends StatelessWidget {
       // decoration: _parentContainerDecoration,
       child: Container(
         // color: Colors.white,
-        margin: EdgeInsets.fromLTRB(92, 30, 92, 30),
+        margin: const EdgeInsets.fromLTRB(92, 30, 92, 30),
         // padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
@@ -88,9 +87,9 @@ class EventDetails extends StatelessWidget {
                     color: Theme.of(context).canvasColor,
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  margin: EdgeInsets.only(left: 12, bottom: 12),
-                  padding: EdgeInsets.all(28),
-                  child: MarkdownBody(
+                  margin: const EdgeInsets.only(left: 12, bottom: 12),
+                  padding: const EdgeInsets.all(28),
+                  child: const MarkdownBody(
                     data: defaultEventDescription,
                   ),
                 ),

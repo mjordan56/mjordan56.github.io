@@ -15,13 +15,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   print('generateRoute: ${settings.name}');
   switch (settings.name) {
     case Routes.home:
-      return _getPageRoute(HomeView(), settings);
+      return _getPageRoute(const HomeView(), settings);
     case Routes.posts:
-      return _getPageRoute(PostsView(), settings);
+      return _getPageRoute(const PostsView(), settings);
     case Routes.about:
-      return _getPageRoute(AboutView(), settings);
+      return _getPageRoute(const AboutView(), settings);
     default:
-      return _getPageRoute(HomeView(), settings);
+      return _getPageRoute(const HomeView(), settings);
   }
 }
 

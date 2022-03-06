@@ -32,7 +32,7 @@ class HomeContentDesktop extends StatelessWidget {
   Widget _header() {
     return IntrinsicHeight(
       child: Container(
-        padding: EdgeInsets.fromLTRB(92, 28, 92, 14),
+        padding: const EdgeInsets.fromLTRB(92, 28, 92, 14),
         color: _headerColor,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class HomeContentDesktop extends StatelessWidget {
           // mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(right: 30),
+              margin: const EdgeInsets.only(right: 30),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: SizedBox(
@@ -56,7 +56,7 @@ class HomeContentDesktop extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   'Shiny Object Affliction',
                   style: _headerStyle1,
@@ -80,15 +80,15 @@ class HomeContentDesktop extends StatelessWidget {
         children: <Widget>[
           _header(),
           ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 1250),
+            constraints: const BoxConstraints(maxWidth: 1250),
             child: Container(
               alignment: Alignment.bottomCenter,
               color: Theme.of(context)
                   .backgroundColor, // makes the content area scrollable
-              child: EventDetails(),
+              child: const EventDetails(),
             ),
           ),
-          Footer(),
+          const Footer(),
         ],
       ),
     );

@@ -14,7 +14,7 @@ class CourseDetails extends StatelessWidget {
           sizingInformation.isDesktop ? TextAlign.left : TextAlign.center;
       final double titleSize = sizingInformation.isMobile ? 24 : 36;
       final double descriptionSize = sizingInformation.isMobile ? 16 : 21;
-      return Container(
+      return SizedBox(
         width: 600,
         child: Column(
           crossAxisAlignment: crossAxisAlignment,
@@ -28,7 +28,7 @@ class CourseDetails extends StatelessWidget {
                   height: 0.9),
               textAlign: textAlignment,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(

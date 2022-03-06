@@ -10,11 +10,11 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
       child: Column(
-        children: <Widget>[
+        children: const <Widget>[
           NavigationDrawerHeader(),
           DrawerItem('Posts', Icons.comment, Routes.posts),
           DrawerItem('About', Icons.help, Routes.about),
