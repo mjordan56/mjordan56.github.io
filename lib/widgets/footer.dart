@@ -1,3 +1,7 @@
+//
+// Copyright (c) 2022 Quiverware LLC
+//
+
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {

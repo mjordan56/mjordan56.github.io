@@ -19,42 +19,82 @@ class AppTheme {
 
   static final fontFamily = GoogleFonts.lato().fontFamily;
 
-  static final ThemeData light = ThemeData.light().copyWith(
-    dialogTheme: ThemeData.light().dialogTheme.copyWith(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
+  /// App core theme attributes. The core [ThemeData] attributes are
+  /// common across all app themes. The core [ThemeData] is generally
+  /// not accessed by the app but is used by other theme instances
+  /// to specify attributes common to all themes.
+  ///
+  static final ThemeData coreThemeData = ThemeData(
+    dialogTheme: const DialogTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+      ),
+    ),
+    tabBarTheme: TabBarTheme(
+      indicator: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: AppColor.secondary,
+            width: 3.5,
           ),
         ),
-    appBarTheme: const AppBarTheme(backgroundColor: AppColor.primary),
+      ),
+      labelPadding: EdgeInsets.all(25),
+      indicatorSize: TabBarIndicatorSize.label,
+      labelColor: AppColor.secondary,
+      labelStyle: GoogleFonts.latoTextTheme().button!.copyWith(
+            fontSize: 16.5,
+            fontWeight: FontWeight.w900,
+          ),
+      unselectedLabelStyle: GoogleFonts.latoTextTheme().button!.copyWith(
+            fontSize: 14.5,
+            fontWeight: FontWeight.w700,
+          ),
+    ),
+  );
+
+  /// Light app [ThemeData]. Attributes specific to [ThemeMode.light].
+  ///
+  static final ThemeData light = ThemeData.light().copyWith(
+    appBarTheme: const AppBarTheme(backgroundColor: Colors.white60),
+    cardTheme: ThemeData.light().cardTheme.copyWith(color: AppColor.primary_20),
     colorScheme:
         ThemeData.light().colorScheme.copyWith(secondary: AppColor.secondary),
-    cardTheme: ThemeData.light().cardTheme.copyWith(color: AppColor.primary_5),
+    dialogTheme: ThemeData.light().dialogTheme.copyWith(
+          shape: coreThemeData.dialogTheme.shape,
+        ),
+    tabBarTheme: ThemeData.light().tabBarTheme.copyWith(
+          indicator: coreThemeData.tabBarTheme.indicator,
+          indicatorSize: coreThemeData.tabBarTheme.indicatorSize,
+          labelColor: coreThemeData.tabBarTheme.labelColor,
+          labelStyle: coreThemeData.tabBarTheme.labelStyle,
+          unselectedLabelColor: Colors.black54,
+          unselectedLabelStyle: coreThemeData.tabBarTheme.unselectedLabelStyle,
+        ),
     textTheme: ThemeData.light().textTheme.apply(fontFamily: fontFamily),
     toggleableActiveColor: AppColor.secondary,
   );
 
+  /// Dark app [ThemeData]. Attributes specific to [ThemeMode.dark].
+  ///
   static final ThemeData dark = ThemeData.dark().copyWith(
-    dialogTheme: ThemeData.dark().dialogTheme.copyWith(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-          ),
-        ),
-    tabBarTheme: ThemeData.dark().tabBarTheme.copyWith(
-          indicator: const BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: AppColor.secondary,
-                width: 3.5,
-              ),
-            ),
-          ),
-        ),
-    appBarTheme: const AppBarTheme(backgroundColor: AppColor.primary),
+    appBarTheme: const AppBarTheme(backgroundColor: AppColor.darkBackground),
+    cardTheme: ThemeData.dark().cardTheme.copyWith(color: AppColor.primary_94),
     colorScheme: ThemeData.dark().colorScheme.copyWith(
           background: AppColor.darkBackground,
           secondary: AppColor.secondary,
         ),
-    cardTheme: ThemeData.dark().cardTheme.copyWith(color: AppColor.primary_94),
+    dialogTheme: ThemeData.dark().dialogTheme.copyWith(
+          shape: coreThemeData.dialogTheme.shape,
+        ),
+    tabBarTheme: ThemeData.dark().tabBarTheme.copyWith(
+          indicator: coreThemeData.tabBarTheme.indicator,
+          indicatorSize: coreThemeData.tabBarTheme.indicatorSize,
+          labelColor: coreThemeData.tabBarTheme.labelColor,
+          labelStyle: coreThemeData.tabBarTheme.labelStyle,
+          unselectedLabelColor: Colors.white54,
+          unselectedLabelStyle: coreThemeData.tabBarTheme.unselectedLabelStyle,
+        ),
     textTheme: ThemeData.dark().textTheme.apply(fontFamily: fontFamily),
     toggleableActiveColor: AppColor.secondary,
   );

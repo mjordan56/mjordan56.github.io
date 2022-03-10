@@ -7,7 +7,8 @@ import 'package:shiny_object_affliction/widgets/footer.dart';
 class HomeContentDesktop extends StatelessWidget {
   const HomeContentDesktop({Key? key}) : super(key: key);
 
-  static const _headerColor = Color(0xff0a0a0a);
+  // static const _headerColor = Color(0xff0a0a0a);
+  static const _headerColor = Color.fromARGB(255, 46, 45, 45);
 
   static const _defaultEventImage = 'assets/images/shinybender.png';
 

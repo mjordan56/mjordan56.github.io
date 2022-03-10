@@ -47,6 +47,8 @@ class AppTextStyle {
     fontWeight: FontWeight.bold,
   );
 
-  TextStyle get bodySmall2 =>
-      const TextStyle(fontSize: 12, fontWeight: FontWeight.normal);
+  TextStyle get bodySmall2 => const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+      );
 }

@@ -53,15 +53,13 @@ class BlogPostCard extends StatelessWidget {
 
   final int index;
 
-  final _decoration = BoxDecoration(
-    borderRadius: BorderRadius.circular(4),
-    color: Colors.white,
-  );
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: _decoration,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: Theme.of(context).cardTheme.color,
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
