@@ -4,6 +4,7 @@ import 'package:shiny_object_affliction/src/providers/providers.dart';
 import 'package:shiny_object_affliction/src/widgets/theme_toggle_button.dart';
 import 'package:shiny_object_affliction/views/about/about_content_desktop.dart';
 import 'package:shiny_object_affliction/views/home/home_content_desktop.dart';
+import 'package:shiny_object_affliction/views/home/home_view.dart';
 import 'package:shiny_object_affliction/views/posts/posts_view.dart';
 import 'package:shiny_object_affliction/widgets/navigation_drawer/navigation_drawer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -38,7 +39,7 @@ class LayoutTemplate extends ConsumerWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    const WebPage(child: HomeContentDesktop()),
+                    const WebPage(child: HomeView()),
                     const WebPage(child: PostsView()),
                     WebPage(child: AboutContentDesktop()),
                   ],

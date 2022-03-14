@@ -15,7 +15,7 @@ class HomeContentDesktop extends StatelessWidget {
   static const TextStyle _headerStyle1 = TextStyle(
     color: Colors.white,
     fontFamily: 'PlayfairDisplay',
-    fontSize: 48,
+    fontSize: 32,
     fontStyle: FontStyle.italic,
     // fontWeight: FontWeight.w500,
     // letterSpacing: 1,
@@ -25,51 +25,50 @@ class HomeContentDesktop extends StatelessWidget {
   static const TextStyle _headerStyle2 = TextStyle(
     color: Colors.white,
     fontFamily: 'Lato',
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: FontWeight.w400,
     height: 1.5,
   );
 
   Widget _header() {
-    return IntrinsicHeight(
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(92, 28, 92, 14),
-        color: _headerColor,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(right: 30),
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: SizedBox(
-                  height: 130,
-                  width: 65,
-                  child: Container(
-                    // decoration: _imageDecoration,
-                    child: Image.asset(_defaultEventImage),
-                  ),
-                ),
+    return Container(
+      constraints: BoxConstraints(maxWidth: 1250),
+      padding: const EdgeInsets.fromLTRB(92, 14, 92, 14),
+      color: _headerColor,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(right: 10),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                height: 100, //130,
+                width: 65,
+                // child: Container(
+                // decoration: _imageDecoration,
+                child: Image.asset(_defaultEventImage),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: const <Widget>[
-                Text(
-                  'Shiny Object Affliction',
-                  style: _headerStyle1,
-                ),
-                Text(
-                  'Musing on cool tech',
-                  style: _headerStyle2,
-                ),
-              ],
-            ),
-          ],
-        ),
+            // ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: const <Widget>[
+              Text(
+                'Shiny Object Affliction',
+                style: _headerStyle1,
+              ),
+              Text(
+                'Musings on cool tech',
+                style: _headerStyle2,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

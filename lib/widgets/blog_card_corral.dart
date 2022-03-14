@@ -11,6 +11,8 @@ class BlogCardCorral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final columns = width > 740 ? 2 : 1;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
       decoration: _decoration,
@@ -30,7 +32,7 @@ class BlogCardCorral extends StatelessWidget {
             child: GridView.count(
               primary: false,
               childAspectRatio: 2,
-              crossAxisCount: 2,
+              crossAxisCount: columns,
               crossAxisSpacing: 20,
               mainAxisSpacing: 30,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

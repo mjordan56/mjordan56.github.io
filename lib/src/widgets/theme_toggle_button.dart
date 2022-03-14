@@ -26,18 +26,20 @@ class ThemeToggleButton extends ConsumerWidget {
   ThemeToggleButton({
     Key? key,
     required this.provider,
-    this.size = 16.0,
+    this.size = 20.0,
     Icon? darkThemeIcon,
     Icon? lightThemeIcon,
   }) : super(key: key) {
     this.darkThemeIcon = darkThemeIcon ??
         Icon(
-          Icons.sunny,
+          Icons.light_mode,
+          color: Colors.white,
           size: size,
         );
     this.lightThemeIcon = lightThemeIcon ??
         Icon(
-          Icons.nightlight_round_outlined,
+          Icons.dark_mode,
+          color: Colors.black87,
           size: size,
         );
   }

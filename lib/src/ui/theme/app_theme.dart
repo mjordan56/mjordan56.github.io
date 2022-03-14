@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shiny_object_affliction/src/ui/theme/app_text_style.dart';
 import 'app_color.dart';
 
 // TODO: FIXME integrate my old color scheme into the theme data
@@ -30,6 +31,7 @@ class AppTheme {
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
     ),
+    scaffoldBackgroundColor: AppColor.secondary,
     tabBarTheme: TabBarTheme(
       indicator: const BoxDecoration(
         border: Border(
@@ -39,16 +41,16 @@ class AppTheme {
           ),
         ),
       ),
-      labelPadding: EdgeInsets.all(25),
+      labelPadding: const EdgeInsets.all(25),
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: AppColor.secondary,
       labelStyle: GoogleFonts.latoTextTheme().button!.copyWith(
-            fontSize: 16.5,
+            fontSize: 18.5,
             fontWeight: FontWeight.w900,
           ),
       unselectedLabelStyle: GoogleFonts.latoTextTheme().button!.copyWith(
-            fontSize: 14.5,
-            fontWeight: FontWeight.w700,
+            fontSize: 15.5,
+            fontWeight: FontWeight.w400,
           ),
     ),
   );
@@ -57,12 +59,16 @@ class AppTheme {
   ///
   static final ThemeData light = ThemeData.light().copyWith(
     appBarTheme: const AppBarTheme(backgroundColor: Colors.white60),
+    backgroundColor: AppColor.lightBackground,
     cardTheme: ThemeData.light().cardTheme.copyWith(color: AppColor.primary_20),
-    colorScheme:
-        ThemeData.light().colorScheme.copyWith(secondary: AppColor.secondary),
+    colorScheme: ThemeData.light().colorScheme.copyWith(
+          background: AppColor.lightBackground,
+          secondary: AppColor.secondary,
+        ),
     dialogTheme: ThemeData.light().dialogTheme.copyWith(
           shape: coreThemeData.dialogTheme.shape,
         ),
+    scaffoldBackgroundColor: coreThemeData.scaffoldBackgroundColor,
     tabBarTheme: ThemeData.light().tabBarTheme.copyWith(
           indicator: coreThemeData.tabBarTheme.indicator,
           indicatorSize: coreThemeData.tabBarTheme.indicatorSize,
@@ -87,6 +93,7 @@ class AppTheme {
     dialogTheme: ThemeData.dark().dialogTheme.copyWith(
           shape: coreThemeData.dialogTheme.shape,
         ),
+    scaffoldBackgroundColor: coreThemeData.scaffoldBackgroundColor,
     tabBarTheme: ThemeData.dark().tabBarTheme.copyWith(
           indicator: coreThemeData.tabBarTheme.indicator,
           indicatorSize: coreThemeData.tabBarTheme.indicatorSize,
@@ -95,9 +102,16 @@ class AppTheme {
           unselectedLabelColor: Colors.white54,
           unselectedLabelStyle: coreThemeData.tabBarTheme.unselectedLabelStyle,
         ),
-    textTheme: ThemeData.dark().textTheme.apply(fontFamily: fontFamily),
+    // textTheme: ThemeData.dark().textTheme.apply(fontFamily: fontFamily),
+    textTheme: textTheme,
     toggleableActiveColor: AppColor.secondary,
   );
+
+  static final TextTheme textTheme = Typography.whiteMountainView.copyWith(
+      bodyText2: Typography.whiteCupertino.bodyMedium!.copyWith(fontSize: 16));
+  // static final TextTheme textTheme = TextTheme(
+  //   bodyMedium: AppTextStyle.bodyMedium,
+  // ).apply(displayColor: Colors.amber);
 }
 
 abstract class OxosIconTheme {

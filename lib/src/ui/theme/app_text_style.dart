@@ -42,12 +42,17 @@ class AppTextStyle {
     fontWeight: FontWeight.normal,
   );
 
-  static const TextStyle bodyDefault1 = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
+  static const TextStyle bodyLarge = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
   );
 
-  TextStyle get bodySmall2 => const TextStyle(
+  static const TextStyle bodyMedium = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
+
+  TextStyle get bodySmall => const TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.normal,
       );

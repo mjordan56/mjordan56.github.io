@@ -17,6 +17,7 @@ class AppColor {
   // TEMPORARY - this color matches the previous dark mode background.
   // TODO: mjordan 12-03-2021 determine the correct dark mode background color.
   static const Color darkBackground = Color(0xFF303030);
+  static const Color lightBackground = Color(0xffedeff2);
 
   static const Color primary_100 = Color(0xFF151517);
   static const Color primary_94 = Color(0xFF222224);
