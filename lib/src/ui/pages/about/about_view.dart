@@ -1,6 +1,11 @@
+//
+// Copyright (c) 2022 Quiverware LLC
+//
+
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:shiny_object_affliction/views/about/about_content_desktop.dart';
+
+import '../../ui.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({Key? key}) : super(key: key);

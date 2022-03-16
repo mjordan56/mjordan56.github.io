@@ -75,22 +75,50 @@ class HomeContentDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          _header(),
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1250),
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              color: Theme.of(context)
-                  .backgroundColor, // makes the content area scrollable
-              child: const EventDetails(),
-            ),
-          ),
-          const Footer(),
-        ],
-      ),
+    // return CustomScrollView(
+    //   slivers: <Widget>[
+    //     SliverAppBar(
+    //       backgroundColor: Colors.amber,
+    //     ),
+    //     // SliverList(
+    //     //   delegate:
+    //     //       SliverChildBuilderDelegate((BuildContext context, int index) {
+    //     //     return const Placeholder();
+    //     //   }, childCount: 5),
+    //     // ),
+    //   ],
+    // );
+    // return Placeholder();
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        _header(),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const EventDetails(),
+            // const Footer(),
+          ],
+        ),
+        //       // Container(
+        //       //   constraints: BoxConstraints(maxWidth: 1250),
+        //       //   alignment: Alignment.bottomCenter,
+        //       //   color: Theme.of(context)
+        //       //       .backgroundColor, // makes the content area scrollable
+        //       //   child: Expanded(
+        //       //     child: Column(
+        //       //       mainAxisSize: MainAxisSize.max,
+        //       //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //       //       children: [
+        //       //         const EventDetails(),
+        //       //         const Footer(),
+        //       //       ],
+        //       //     ),
+        //       //   ),
+        //       // ),
+      ],
     );
   }
 }

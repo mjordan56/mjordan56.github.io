@@ -1,22 +1,36 @@
+//
+// Copyright (c) 2022 Quiverware LLC
+//
+
 import 'package:flutter/widgets.dart';
 
+import 'footer.dart';
+
 class WebPage extends StatelessWidget {
+  final Widget? child;
+
   const WebPage({Key? key, required this.child}) : super(key: key);
-  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            // minWidth: MediaQuery.of(context).size.width,
-            // minHeight: constraints.maxHeight,
-            minHeight: MediaQuery.of(context).size.height,
-          ),
-          child: child,
+    return CustomScrollView(
+      key: key,
+      primary: false,
+      slivers: <Widget>[
+        SliverOverlapInjector(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
-      ),
+        SliverToBoxAdapter(child: child),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: const <Widget>[
+              Footer(),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

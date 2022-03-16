@@ -1,7 +1,10 @@
+//
+// Copyright (c) 2022 Quiverware LLC
+//
+
 import 'package:flutter/material.dart';
-import 'package:shiny_object_affliction/views/about/about_view.dart';
-import 'package:shiny_object_affliction/views/home/home_view.dart';
-import 'package:shiny_object_affliction/views/posts/posts_view.dart';
+
+import '../src/ui/ui.dart';
 
 // Route names
 class Routes {
