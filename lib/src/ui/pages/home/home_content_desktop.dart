@@ -1,8 +1,10 @@
-// import 'dart:html';
+//
+// Copyright (c) 2022 Quiverware LLC
+//
 
 import 'package:flutter/material.dart';
 import 'package:shiny_object_affliction/widgets/event_details/event_details.dart';
-import 'package:shiny_object_affliction/widgets/footer.dart';
+import 'package:shiny_object_affliction/src/ui/components/footer.dart';
 
 class HomeContentDesktop extends StatelessWidget {
   const HomeContentDesktop({Key? key}) : super(key: key);
@@ -32,7 +34,7 @@ class HomeContentDesktop extends StatelessWidget {
 
   Widget _header() {
     return Container(
-      constraints: BoxConstraints(maxWidth: 1250),
+      constraints: const BoxConstraints(maxWidth: 1250),
       padding: const EdgeInsets.fromLTRB(92, 14, 92, 14),
       color: _headerColor,
       child: Row(
@@ -97,8 +99,8 @@ class HomeContentDesktop extends StatelessWidget {
         Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const EventDetails(),
+          children: const <Widget>[
+            EventDetails(),
             // const Footer(),
           ],
         ),

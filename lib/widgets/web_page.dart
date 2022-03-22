@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import 'footer.dart';
+import '../src/ui/components/footer.dart';
 
 class WebPage extends StatelessWidget {
   final Widget? child;

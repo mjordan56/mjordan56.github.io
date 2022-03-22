@@ -61,10 +61,11 @@ class AppTheme {
     appBarTheme: const AppBarTheme(backgroundColor: Colors.white60),
     backgroundColor: AppColor.lightBackground,
     cardTheme: ThemeData.light().cardTheme.copyWith(color: AppColor.primary_20),
-    colorScheme: ThemeData.light().colorScheme.copyWith(
-          background: AppColor.lightBackground,
-          secondary: AppColor.secondary,
-        ),
+    colorScheme: lightColorScheme,
+    // colorScheme: ThemeData.light().colorScheme.copyWith(
+    //       background: AppColor.lightBackground,
+    //       secondary: AppColor.secondary,
+    //     ),
     dialogTheme: ThemeData.light().dialogTheme.copyWith(
           shape: coreThemeData.dialogTheme.shape,
         ),
@@ -77,7 +78,8 @@ class AppTheme {
           unselectedLabelColor: Colors.black54,
           unselectedLabelStyle: coreThemeData.tabBarTheme.unselectedLabelStyle,
         ),
-    textTheme: ThemeData.light().textTheme.apply(fontFamily: fontFamily),
+    // textTheme: ThemeData.light().textTheme.apply(fontFamily: fontFamily),
+    textTheme: Typography.blackMountainView,
     toggleableActiveColor: AppColor.secondary,
   );
 
@@ -86,10 +88,11 @@ class AppTheme {
   static final ThemeData dark = ThemeData.dark().copyWith(
     appBarTheme: const AppBarTheme(backgroundColor: AppColor.darkBackground),
     cardTheme: ThemeData.dark().cardTheme.copyWith(color: AppColor.primary_94),
-    colorScheme: ThemeData.dark().colorScheme.copyWith(
-          background: AppColor.darkBackground,
-          secondary: AppColor.secondary,
-        ),
+    colorScheme: darkColorScheme,
+    // colorScheme: ThemeData.dark().colorScheme.copyWith(
+    //       background: AppColor.darkBackground,
+    //       secondary: AppColor.secondary,
+    //     ),
     dialogTheme: ThemeData.dark().dialogTheme.copyWith(
           shape: coreThemeData.dialogTheme.shape,
         ),

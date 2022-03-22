@@ -51,9 +51,9 @@ class BlogCardCorral extends StatelessWidget {
 }
 
 class BlogPostCard extends StatelessWidget {
-  BlogPostCard({Key? key, required this.index}) : super(key: key);
-
   final int index;
+
+  const BlogPostCard({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -20,7 +20,7 @@ class AboutContentDesktop extends ConsumerWidget {
     final about = ref.watch(aboutProvider);
     return about.when(
         data: (String welcome) => AboutContent(about: welcome),
-        error: (_, __) => Placeholder(),
+        error: (_, __) => const Placeholder(),
         loading: () => CircularProgressIndicator());
 
     const noMarkdownData = ':wink: markdown data not loaded';
@@ -98,8 +98,6 @@ class AboutContent extends StatelessWidget {
 class AboutHeader extends StatelessWidget {
   const AboutHeader({Key? key}) : super(key: key);
 
-  static const _headerColor = Color(0xff0a0a0a);
-
   static const _defaultEventImage = 'assets/images/michael_jordan_portrait.jpg';
 
   @override
@@ -109,7 +107,7 @@ class AboutHeader extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 1250),
         child: Container(
           padding: const EdgeInsets.fromLTRB(92, 28, 92, 14),
-          color: _headerColor,
+          color: Theme.of(context).splashColor,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,15 +131,14 @@ class AboutHeader extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  const Text(
+                children: const <Widget>[
+                  Text(
                     'Michael Jordan',
-                    style: MarkdownStyle.headerStyle1,
+                    style: AppTextStyle.headline1,
                   ),
                   Text(
                     'whoami',
-                    style: MarkdownStyle.headerStyle2
-                        .copyWith(color: Colors.white),
+                    style: AppTextStyle.headline2,
                   ),
                 ],
               ),

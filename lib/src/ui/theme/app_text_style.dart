@@ -4,9 +4,56 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
   AppTextStyle._();
+
+  static final TextStyle styleTest = GoogleFonts.hurricane(
+    textStyle: const TextStyle(
+      inherit: false,
+      color: Colors.white,
+      fontSize: 24,
+      fontWeight: FontWeight.w400,
+      height: 1.1,
+    ),
+  );
+
+  static const TextTheme main = TextTheme(
+    displayLarge: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+    ),
+    displayMedium: TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+    ),
+    displaySmall: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.normal,
+    ),
+    // this.headlineLarge,
+    // TextStyle? headlineMedium,
+    // TextStyle? headlineSmall,
+    // TextStyle? titleLarge,
+    // TextStyle? titleMedium,
+    // TextStyle? titleSmall,
+    bodyLarge: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+    ),
+    bodySmall: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.normal,
+    ),
+    // TextStyle? labelLarge,
+    // this.labelMedium,
+    // TextStyle? labelSmall,
+  );
 
   static const TextStyle headline1 = TextStyle(
     fontSize: 22,
@@ -62,36 +109,29 @@ class AppTextStyle {
 class MarkdownStyle {
   MarkdownStyle._();
 
-  static const TextStyle headerStyle1 = TextStyle(
-    color: Colors.white,
-    fontFamily: 'Lato',
-    fontSize: 32,
-    fontStyle: FontStyle.normal,
-    fontWeight: FontWeight.w700,
-    // letterSpacing: 1,
-    // height: 1
-  );
-
-  static const TextStyle headerStyle2 = TextStyle(
-    color: Colors.black87,
-    fontFamily: 'Lato',
-    fontSize: 28,
-    fontWeight: FontWeight.w400,
-    height: 1.5,
-  );
-
   static final MarkdownStyleSheet main = MarkdownStyleSheet(
-    blockSpacing: 21,
-    h1: headerStyle1.copyWith(color: Colors.black87),
-    h2: headerStyle2,
-    h3: headerStyle1.copyWith(
-        color: Colors.black87, fontSize: 24, fontWeight: FontWeight.w600),
-    h4: headerStyle1.copyWith(
-        color: Colors.black87, fontSize: 16, fontWeight: FontWeight.w600),
-    p: headerStyle1.copyWith(
-      color: Colors.black,
-      fontFamily: 'Lato',
+    blockSpacing: 16,
+    h1: const TextStyle(
+      fontFamily: 'Barlow',
+      fontSize: 28,
+      height: 2,
+    ),
+    h2: const TextStyle(
+      fontSize: 21,
+      height: 2.5,
+    ),
+    h3: const TextStyle(
       fontSize: 18,
+      height: 1.5,
+      fontWeight: FontWeight.w600,
+    ),
+    h4: const TextStyle(
+      fontSize: 16,
+      height: 1.5,
+      fontWeight: FontWeight.w600,
+    ),
+    p: const TextStyle(
+      fontSize: 15.5,
       fontWeight: FontWeight.normal,
       fontStyle: FontStyle.normal,
       height: 1.6,

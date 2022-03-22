@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shiny_object_affliction/src/providers/providers.dart';
+import 'package:shiny_object_affliction/src/ui/theme/app_text_style.dart';
 import 'package:shiny_object_affliction/src/ui/theme/app_theme.dart';
 import 'package:shiny_object_affliction/widgets/blog_card_corral.dart';
 import 'package:shiny_object_affliction/widgets/triangle.dart';
@@ -48,8 +49,8 @@ class EventDetails extends ConsumerWidget {
     final welcome = ref.watch(welcomeMessageProvider);
     return welcome.when(
         data: (String welcome) => WelcomeMessage(message: welcome),
-        error: (_, __) => Placeholder(),
-        loading: () => CircularProgressIndicator());
+        error: (_, __) => const Placeholder(),
+        loading: () => const CircularProgressIndicator());
     // final AboutData value = Provider.of<DataManager>(context).aboutData;
     // print('Value: ${value.data}');
   }
@@ -98,10 +99,11 @@ class WelcomeMessage extends StatelessWidget {
                   padding: const EdgeInsets.all(28),
                   child: MarkdownBody(
                     data: message,
-                    styleSheet:
-                        MarkdownStyleSheet.fromTheme(AppTheme.dark.copyWith(
-                      textTheme: AppTheme.textTheme,
-                    )),
+                    styleSheet: MarkdownStyle.main,
+                    // styleSheet:
+                    //     MarkdownStyleSheet.fromTheme(AppTheme.dark.copyWith(
+                    //   textTheme: AppTheme.textTheme,
+                    // )),
                   ),
                 ),
               ],

@@ -19,7 +19,7 @@ class AboutView extends StatelessWidget {
     //   ),
     // );
     return ScreenTypeLayout(
-      desktop: AboutContentDesktop(),
+      desktop: const AboutContentDesktop(),
       mobile: const AboutContentMobile(),
       tablet: const AboutContentTablet(),
     );
