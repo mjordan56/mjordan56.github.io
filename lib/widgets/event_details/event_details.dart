@@ -47,12 +47,11 @@ class EventDetails extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final welcome = ref.watch(welcomeMessageProvider);
+
     return welcome.when(
         data: (String welcome) => WelcomeMessage(message: welcome),
         error: (_, __) => const Placeholder(),
         loading: () => const CircularProgressIndicator());
-    // final AboutData value = Provider.of<DataManager>(context).aboutData;
-    // print('Value: ${value.data}');
   }
 }
 
@@ -66,8 +65,8 @@ class WelcomeMessage extends StatelessWidget {
       // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       // decoration: _parentContainerDecoration,
       child: Container(
-        // color: Colors.white,
-        margin: const EdgeInsets.fromLTRB(92, 30, 92, 30),
+        color: Colors.white,
+        margin: const EdgeInsets.fromLTRB(92, 0, 92, 30),
         // padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[

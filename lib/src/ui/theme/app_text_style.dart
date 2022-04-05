@@ -114,11 +114,10 @@ class MarkdownStyle {
     h1: const TextStyle(
       fontFamily: 'Barlow',
       fontSize: 28,
-      height: 2,
     ),
     h2: const TextStyle(
       fontSize: 21,
-      height: 2.5,
+      height: 2,
     ),
     h3: const TextStyle(
       fontSize: 18,
