@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiny_object_affliction/src/ui/theme/app_color.dart';
 
 class Triangle extends StatelessWidget {
   const Triangle({
@@ -25,7 +26,7 @@ class Triangle extends StatelessWidget {
       child: ClipPath(
         clipper: TriangleClipper(),
         child: Container(
-          color: color ?? Theme.of(context).colorScheme.secondary,
+          color: color ?? AppColor.primary,
           height: height,
           width: width,
         ),

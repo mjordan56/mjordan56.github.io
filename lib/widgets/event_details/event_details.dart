@@ -65,7 +65,7 @@ class WelcomeMessage extends StatelessWidget {
       // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       // decoration: _parentContainerDecoration,
       child: Container(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         margin: const EdgeInsets.fromLTRB(92, 0, 92, 30),
         // padding: EdgeInsets.all(20),
         child: Column(
@@ -78,9 +78,7 @@ class WelcomeMessage extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: LayoutBuilder(
                       builder: (context, contraints) {
-                        final length =
-                            min(contraints.maxHeight, contraints.maxWidth) *
-                                0.65;
+                        final length = contraints.maxWidth * 0.35;
                         return Triangle(
                           height: length,
                           width: length,
@@ -92,9 +90,12 @@ class WelcomeMessage extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: Theme.of(context).canvasColor,
-                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(
+                        color: Theme.of(context).colorScheme.outline,
+                        width: 0.5),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  margin: const EdgeInsets.only(left: 12, bottom: 12),
+                  margin: const EdgeInsets.only(left: 8, bottom: 8),
                   padding: const EdgeInsets.all(28),
                   child: MarkdownBody(
                     data: message,
